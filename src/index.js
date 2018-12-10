@@ -173,7 +173,8 @@ export default class Ink extends React.PureComponent {
     }
   }
 
-  _onRelease() {
+  _onRelease(event) {
+    this.props.onClick && this.props.onClick(event);
     this.state.store.release(Date.now())
   }
 }
